@@ -64,7 +64,7 @@ class Enemy {
             for(let i = 0; i < 20; i++)
             {
                 console.log(this.m_Position);
-                //this.m_Bullets.push(this.m_Position);
+                this.m_Bullets.push(this.m_Position);
             }
         }
     }
