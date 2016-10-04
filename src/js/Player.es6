@@ -12,7 +12,7 @@ class Player
             width: this.m_Dimension.width,
             height: this.m_Dimension.height
         };
-        this.m_Speed = 5;
+        this.m_Speed = 10;
         this.m_State = "Active";
         this.m_Bullets = [];
         this.m_FillStyle = "rgb(12,66,145)";
@@ -21,6 +21,7 @@ class Player
         this.m_Health = 3;
         this.m_Score = 0;
         this.m_EnemiesKilled = 0;
+        this.m_ShootTimer = 0;
     }
 
     length(a_Vector)
@@ -102,6 +103,15 @@ class Player
         {
             this.m_Position.y += this.m_Speed;
         }
+
+        if(this.m_Position.x < 0)
+            this.m_Position.x = 640;
+        else if(this.m_Position.x > 640)
+            this.m_Position.x = 0;
+        else if( this.m_Position.y < 0)
+            this.m_Position.y = 720;
+        else if( this.m_Position.y > 720)
+            this.m_Position.y = 0;
         if(a_Keys.space)
         {
             this.shootBullet(a_BulletManager);
@@ -110,7 +120,12 @@ class Player
 
     shootBullet(a_BulletManager)
     {
-        a_BulletManager.m_Bullets.push(new PlayerBullet(this.m_Position, this.m_Dimension));
+        this.m_ShootTimer++;
+        if(this.m_ShootTimer >= 3)
+        {
+            a_BulletManager.m_Bullets.push(new PlayerBullet(this.m_Position, this.m_Dimension));
+            this.m_ShootTimer = 0;
+        }
     }
 
 }

@@ -43,6 +43,14 @@ class CanvasView
             this.m_Context.fillRect((560)+(i*20), 700, 10, 10);
         }
     }
+
+    drawText(a_Score)
+    {
+        this.m_Context.font = "30px Helvetica";
+        this.m_Context.fillText("GAME OVER", 640 / 2 - 100, 720/2 - 40);
+        this.m_Context.fillText("High Score: " + a_Score, 640 / 2 - 160, 720/2);
+        this.m_Context.fillText("Press SPACEBAR to restart", 640 / 2 - 200, 720/2 + 40);
+    }
 }
 
 export {CanvasView}
