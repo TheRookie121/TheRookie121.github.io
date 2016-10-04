@@ -1,6 +1,6 @@
 class Enemy {
     //Enemy constructor
-    constructor(a_Position, a_MatterEngine) {
+    constructor(a_Position) {
         this.m_Position = a_Position;
         this.m_Width = 20;
         this.m_Height = 40;
@@ -56,26 +56,6 @@ class Enemy {
 
     update(a_Player)
     {
-        const enemyPos = this.m_Body.position;
-        const playerPos = a_Player.m_Body.position;
-
-        //calculate line to player
-        const lineToPlayer = this.sub(enemyPos,playerPos);
-        //calculate direction
-        const moveDirection =this.normalize(lineToPlayer);
-
-        //velocity vector
-        if(this.m_Spawn) {
-            console.log("spawned");
-            this.m_VelocityVector =
-            {
-                x: -(moveDirection.x) * 1.0,
-                y: -(moveDirection.y) * 1.0
-            };
-            this.m_Spawn = false;
-        }
-        console.log(this.m_VelocityVector, this.m_Body.velocity);
-        this.m_Matter.Body.setVelocity(this.m_Body, this.m_VelocityVector);
 
     }
 }
