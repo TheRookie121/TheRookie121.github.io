@@ -1,8 +1,10 @@
 class Bullet
 {
-    constructor()
+    constructor(a_Posistion)
     {
-        this.m_Position = {x: 0, y: 0};
+        console.log(a_Posistion);
+        this.m_Position = a_Posistion;
+        this.m_Dimension = {width: 10, height: 10};
         this.m_Width = 20;
         this.m_Height = 20;
         this.m_Bullets = [];
@@ -18,6 +20,14 @@ class Bullet
 
     update()
     {
+        // switch(this.m_State)
+        // {
+        //
+        // }
+
+
+        this.m_Position.y+=3;
+
     }
 }
 

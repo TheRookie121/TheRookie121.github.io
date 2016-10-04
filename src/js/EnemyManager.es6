@@ -15,8 +15,8 @@ class EnemyManager
 
         if(this.m_EnemySpawnTimer == 100){
         {
-            //this.spawnEnemy();
-            this.m_EnemySpawnTimer = 0;
+            this.spawnEnemy();
+            //this.m_EnemySpawnTimer = 0;
         }
 
         }

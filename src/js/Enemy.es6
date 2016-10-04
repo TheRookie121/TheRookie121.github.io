@@ -2,12 +2,13 @@ class Enemy {
     //Enemy constructor
     constructor(a_Position) {
         this.m_Position = a_Position;
+        this.m_Dimension = {width: 40, height: 40};
         this.m_Width = 20;
         this.m_Height = 40;
         this.m_Bullets = [];
         this.m_ApplyForceTimer = 0;
         this.m_Spawn = true;
-        this.m_VelocityVector;
+        this.m_BulletTimer = 0;
     }
 
     add(PosA, PosB) {
@@ -56,7 +57,16 @@ class Enemy {
 
     update(a_Player)
     {
-
+        this.m_BulletTimer++;
+        if(this.m_BulletTimer == 100)
+        {
+            console.log("shoot")
+            for(let i = 0; i < 20; i++)
+            {
+                console.log(this.m_Position);
+                this.m_Bullets.push(this.m_Position);
+            }
+        }
     }
 }
 

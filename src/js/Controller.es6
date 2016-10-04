@@ -23,10 +23,23 @@ class Controller
 
     loop()
     {
+        const enemies = this.m_EnemyManager.m_Enemies;
         self = this;
         this.m_Player.update();
         this.m_EnemyManager.update(this.m_Player);
+        this.m_CanvasView.clearDraw();
         this.m_CanvasView.draw(this.m_Player.m_Position, this.m_Player.m_Dimension);
+        for(let i in enemies)
+        {
+            const enemy = enemies[i];
+            this.m_CanvasView.draw(enemy.m_Position, enemy.m_Dimension);
+            for(let j in enemy.m_Bullets)
+            {
+                const bullet = enemy.m_Bullets[j];
+                this.m_CanvasView.draw(bullet.m_Position, bullet.m_Dimension);
+            }
+        }
+
         window.requestAnimationFrame(function(){
            self.loop();
         });
