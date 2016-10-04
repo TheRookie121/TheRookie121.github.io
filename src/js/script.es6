@@ -1,3 +1,5 @@
-const whaddaup = "whaddup";
+import {Controller} from './Controller.es6';
 
-whaddup = whaddup;
+document.addEventListener("DOMContentLoaded", ()=> {
+    const m_Controller = new Controller();
+});

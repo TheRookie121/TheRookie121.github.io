@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../ES6 Template/.idea/ES6 Template.iml" filepath="$PROJECT_DIR$/../ES6 Template/.idea/ES6 Template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Game Jam.iml" filepath="$PROJECT_DIR$/.idea/Game Jam.iml" />
     </modules>
   </component>
 </project>
