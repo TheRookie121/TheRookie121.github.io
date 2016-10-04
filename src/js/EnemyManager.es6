@@ -4,8 +4,6 @@ class EnemyManager
 {
     constructor(a_MatterEngine)
     {
-        this.m_Matter = a_MatterEngine.m_Matter;
-        this.m_MatterEngine = a_MatterEngine;
         this.m_EnemySpawnTimer = 0;
         this.m_EnemySpawnTimerMax = 100;
         this.m_Enemies = [];
@@ -14,13 +12,10 @@ class EnemyManager
     update(a_Player)
     {
         this.m_EnemySpawnTimer++;
-
-        if(this.m_EnemySpawnTimer == 100){
+        if(this.m_EnemySpawnTimer == 100)
         {
-            this.spawnEnemy();
+            //this.spawnEnemy();
             this.m_EnemySpawnTimer = 0;
-        }
-
         }
         for(let i in this.m_Enemies)
         {
@@ -53,7 +48,7 @@ class EnemyManager
             enemyPos.x = (Math.random() * 500);
             enemyPos.y = 520;
         }
-        this.m_Enemies.push(new Enemy(enemyPos, this.m_MatterEngine));
+        this.m_Enemies.push(new Enemy(enemyPos));
 
     }
 }

@@ -1,22 +1,35 @@
-import {MatterEngine} from './MatterEngine.es6';
 import {KeyView} from './KeyView.es6';
 import {Player} from './Player.es6';
+import {EnemyManager} from './EnemyManager.es6'
+import {CanvasView} from './CanvasView.es6'
 
 class Controller
 {
     constructor()
     {
-        this.m_MatterEngine = new MatterEngine();
-        this.m_Player = new Player(this.m_MatterEngine); //CHANGE TO m_MATTERENGINE
+        this.m_Player = new Player(); //CHANGE TO m_MATTERENGINE
         this.m_KeyView = new KeyView(this);
-        this.m_MatterEngine.World.add(this.m_MatterEngine.engine.world, this.m_Player.m_Body);
         this.m_KeyView.m_KeyListener = this.update;
         this.m_KeyView.m_KeyListener.bind(this);//callback
+        this.m_CanvasView = new CanvasView();
+        this.m_EnemyManager = new EnemyManager();
+        this.loop();
     }
 
     update(a_Keys, a_Self)
     {
-        a_Self.m_Player.move(a_Keys, a_Self.m_MatterEngine);
+        a_Self.m_Player.move(a_Keys);
+    }
+
+    loop()
+    {
+        const self = this;
+        this.m_Player.update();
+        this.m_EnemyManager.update(this.m_Player);
+        this.m_CanvasView.draw(this.m_Player.m_Position, this.m_Player.m_Dimensions);
+        window.requestAnimationFrame(function(){
+            self.loop();
+        });
     }
 }
 
