@@ -1,4 +1,4 @@
-import {Bullet} from "./Bullet.es6";
+import {PlayerBullet} from "./PlayerBullet.es6";
 
 class Player
 {
@@ -37,6 +37,12 @@ class Player
             width: this.m_Dimension.width,
             height: this.m_Dimension.height
         };
+
+        for(let i in this.m_Bullets)
+        {
+            const bullet = this.m_Bullets[i];
+            bullet.update();
+        }
     }
 
     move(a_Keys)
@@ -65,7 +71,7 @@ class Player
 
     shootBullet()
     {
-
+        this.m_Bullets.push(new PlayerBullet(this.m_Position, this.m_Dimension));
     }
 
 }

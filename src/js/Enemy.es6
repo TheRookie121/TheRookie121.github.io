@@ -1,4 +1,4 @@
-import {Bullet} from './Bullet.es6';
+import {EnemyBullet} from './EnemyBullet.es6';
 
 class Enemy {
     //Enemy constructor
@@ -93,7 +93,7 @@ class Enemy {
         if(this.m_CanShoot) {
             this.m_TriggerTimer++;
             if (this.m_TriggerTimer >= 10) {
-                const bullet = new Bullet(this.m_Position, this.m_Dimension);
+                const bullet = new EnemyBullet({x: this.m_Position.x, y: this.m_Position.y + 10 }, this.m_Dimension);
                 this.m_Bullets.push(bullet);
                 this.m_TriggerTimer = 0;
                 this.m_BulletCounter++;

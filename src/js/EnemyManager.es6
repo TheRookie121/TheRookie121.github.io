@@ -33,7 +33,6 @@ class EnemyManager
         let enemyPos = {x: 0, y: 0};
         enemyPos.x = (Math.random() * 500);
         enemyPos.y = (Math.random() * 500);
-
         this.m_Enemies.push(new Enemy(enemyPos));
 
     }

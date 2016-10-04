@@ -44,6 +44,14 @@ class Controller
             }
         }
 
+        for(let l in this.m_Player.m_Bullets)
+        {
+            const bullet = this.m_Player.m_Bullets[l];
+            if(!bullet.m_Alive)
+                this.m_Player.m_Bullets.splice(l, 1);
+            this.m_CanvasView.draw(bullet.m_Position, bullet.m_Dimension);
+        }
+
         this.m_CollisionManager.update(this.m_Player, enemies);
 
         window.requestAnimationFrame(function(){
