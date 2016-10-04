@@ -15,10 +15,11 @@ class CollisionManager
 
     AABB(a_RectA, a_RectB)
     {
-        return (a_RectA <= a_RectB.x + a_RectB.width &&
-                a_RectB<= a_RectA.x + a_RectA.width &&
-                a_RectA <= a_RectB.y + a_RectB.height &&
-                a_RectB <= a_RectA.y + a_RectA.height);
+
+        return (a_RectA.x <= a_RectB.x + a_RectB.width &&
+                a_RectB.x <= a_RectA.x + a_RectA.width &&
+                a_RectA.y <= a_RectB.y + a_RectB.height &&
+                a_RectB.y <= a_RectA.y + a_RectA.height);
     }
 
     update(a_Player, a_Enemies)

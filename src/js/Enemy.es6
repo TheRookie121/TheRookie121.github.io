@@ -100,7 +100,7 @@ class Enemy {
             }
         }
     }
-    
+
     update(a_Player)
     {
         this.setRect();
