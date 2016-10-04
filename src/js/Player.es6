@@ -2,7 +2,7 @@ import {PlayerBullet} from "./PlayerBullet.es6";
 
 class Player
 {
-    constructor(a_MatterEngine)
+    constructor()
     {
         this.m_Position = { x: 200, y: 200};
         this.m_Dimension = { width: 20, height: 20 };

@@ -32,20 +32,24 @@ class Controller
         const player = this.m_Player;
         self = this;
         this.m_Player.update();
-        this.m_CanvasView.draw(player.m_Position, player.m_Dimension, player.m_FillStyle);
+        this.m_CanvasView.drawRect(player.m_Position, player.m_Dimension, player.m_FillStyle);
         this.m_CanvasView.drawScore(player.m_Score);
-        this.m_EnemyManager.update(this.m_BulletManager);
+        this.m_CanvasView.drawHealth(player.m_Health);
+        this.m_EnemyManager.update(this.m_BulletManager, player);
         for(let i in enemies)
         {
             const enemy = enemies[i];
-            this.m_CanvasView.draw(enemy.m_Position, enemy.m_Dimension, enemy.m_FillStyle);
+            if(enemy.m_Type == "rect")
+                this.m_CanvasView.drawRect(enemy.m_Position, enemy.m_Dimension, enemy.m_FillStyle);
+            if(enemy.m_Type == "circle")
+                this.m_CanvasView.drawArc(enemy.m_Position, enemy.m_Dimension, enemy.m_FillStyle);
         }
 
         this.m_BulletManager.update();
         for(let l in this.m_BulletManager.m_Bullets)
         {
             const bullet = this.m_BulletManager.m_Bullets[l];
-            this.m_CanvasView.draw(bullet.m_Position, bullet.m_Dimension, bullet.m_FillStyle);
+            this.m_CanvasView.drawRect(bullet.m_Position, bullet.m_Dimension, bullet.m_FillStyle);
         }
 
         this.m_CollisionManager.update(player, enemies, this.m_BulletManager);
