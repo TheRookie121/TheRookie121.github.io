@@ -9,11 +9,12 @@ class Player
         this.m_Width = 20;
         this.m_Height = 20;
         this.m_MoveForce = 0.003;
+        this.m_Speed = 5;
         this.m_State = "Idle";
         this.m_Bullets = [];
         this.m_FillStyle = "rgb(200,200,28)";
         this.m_CanApplyForce = true;
-        this.m_RotateForce = 0.1;
+        //this.m_RotateForce = 0.1;
     }
 
     length(a_Vector)
@@ -31,15 +32,19 @@ class Player
     {
         if(a_Keys.right && this.m_CanApplyForce)
         {
-
+            this.m_Position.x += this.m_Speed;
         }
         if(a_Keys.left && this.m_CanApplyForce)
         {
-
+            this.m_Position.x -= this.m_Speed;
         }
-        if(a_Keys.up)
+        if(a_Keys.up && this.m_CanApplyForce)
         {
-
+            this.m_Position.y -= this.m_Speed;
+        }
+        if(a_Keys.down && this.m_CanApplyForce)
+        {
+            this.m_Position.y += this.m_Speed;
         }
         if(a_Keys.space)
         {
