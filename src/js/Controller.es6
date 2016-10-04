@@ -1,4 +1,3 @@
-import {MatterEngine} from './MatterEngine.es6';
 import {KeyView} from './KeyView.es6';
 import {Player} from './Player.es6';
 
@@ -17,6 +16,11 @@ class Controller
     update(a_Keys, a_Self)
     {
         a_Self.m_Player.move(a_Keys, a_Self.m_MatterEngine);
+    }
+
+    loop()
+    {
+
     }
 }
 
