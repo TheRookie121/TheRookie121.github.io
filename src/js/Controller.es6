@@ -38,6 +38,8 @@ class Controller
             for(let j in enemy.m_Bullets)
             {
                 const bullet = enemy.m_Bullets[j];
+                if(!bullet.m_Alive)
+                    enemy.m_Bullets.splice(j, 1);
                 this.m_CanvasView.draw(bullet.m_Position, bullet.m_Dimension);
             }
         }
