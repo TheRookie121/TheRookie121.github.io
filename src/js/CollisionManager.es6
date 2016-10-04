@@ -15,7 +15,6 @@ class CollisionManager
 
     AABB(a_RectA, a_RectB)
     {
-
         return (a_RectA.x <= a_RectB.x + a_RectB.width &&
                 a_RectB.x <= a_RectA.x + a_RectA.width &&
                 a_RectA.y <= a_RectB.y + a_RectB.height &&
