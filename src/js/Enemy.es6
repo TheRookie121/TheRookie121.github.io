@@ -66,7 +66,17 @@ class Enemy {
         return length;
     }
 
-    update(a_Player)
+    setRect()
+    {
+        this.m_Rect = {
+            x: this.m_Position.x,
+            y: this.m_Position.y,
+            width: this.m_Dimension.width,
+            height: this.m_Dimension.height
+        };
+    }
+
+    shootBullet()
     {
         this.m_ShootTimer++;
         if(this.m_BulletCounter >= 20)
@@ -89,6 +99,12 @@ class Enemy {
                 this.m_BulletCounter++;
             }
         }
+    }
+    
+    update(a_Player)
+    {
+        this.setRect();
+        this.shootBullet();
         for(let j in this.m_Bullets)
         {
             const bullet = this.m_Bullets[j];

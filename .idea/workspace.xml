@@ -5,10 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/script.js" afterPath="$PROJECT_DIR$/dist/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/script.js.map" afterPath="$PROJECT_DIR$/dist/script.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/Bullet.es6" afterPath="$PROJECT_DIR$/src/js/Bullet.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/Controller.es6" afterPath="$PROJECT_DIR$/src/js/Controller.es6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="$PROJECT_DIR$/npm-debug.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/Enemy.es6" afterPath="$PROJECT_DIR$/src/js/Enemy.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/EnemyManager.es6" afterPath="$PROJECT_DIR$/src/js/EnemyManager.es6" />
     </list>
     <ignored path="Creative Programming.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,8 +30,8 @@
       <file leaf-file-name="Controller.es6" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Controller.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="12" />
+            <state relative-caret-position="154">
+              <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -53,21 +51,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnemyManager.es6" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EnemyManager.es6" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/EnemyManager.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="391">
+              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Enemy.es6" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Enemy.es6" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/Enemy.es6">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+            <state relative-caret-position="324">
+              <caret line="102" column="4" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -77,8 +75,11 @@
         <entry file="file://$PROJECT_DIR$/src/js/Player.es6">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-101">
-              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-              <folding />
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding>
+                <marker date="1475585369716" expanded="true" signature="89:205" ph="{...}" />
+                <marker date="1475585369716" expanded="true" signature="1032:1038" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,10 +143,10 @@
         <option value="$PROJECT_DIR$/src/js/Player.es6" />
         <option value="$PROJECT_DIR$/src/js/CanvasView.es6" />
         <option value="$PROJECT_DIR$/src/view/index.html" />
-        <option value="$PROJECT_DIR$/src/js/Controller.es6" />
         <option value="$PROJECT_DIR$/src/js/Bullet.es6" />
-        <option value="$PROJECT_DIR$/src/js/Enemy.es6" />
         <option value="$PROJECT_DIR$/src/js/EnemyManager.es6" />
+        <option value="$PROJECT_DIR$/src/js/Controller.es6" />
+        <option value="$PROJECT_DIR$/src/js/Enemy.es6" />
       </list>
     </option>
   </component>
@@ -286,6 +287,7 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/cmd/git.exe" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Avans Jaar 3/Creative Programming/Game Jam/src/js/Controller.es6" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -374,12 +376,12 @@
       <workItem from="1473243891200" duration="499000" />
       <workItem from="1473595705465" duration="2216000" />
       <workItem from="1473678175955" duration="104000" />
-      <workItem from="1475576582189" duration="8540000" />
+      <workItem from="1475576582189" duration="8922000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15445000" />
+    <option name="totallyTimeSpent" value="15827000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -665,8 +667,11 @@
     <entry file="file://$PROJECT_DIR$/src/js/Player.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-101">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-          <folding />
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <marker date="1475585369716" expanded="true" signature="89:205" ph="{...}" />
+            <marker date="1475585369716" expanded="true" signature="1032:1038" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -694,14 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Enemy.es6">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Bullet.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -710,20 +707,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/EnemyManager.es6">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Controller.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="154">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/EnemyManager.es6">
+    <entry file="file://$PROJECT_DIR$/src/js/Enemy.es6">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        <state relative-caret-position="324">
+          <caret line="102" column="4" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
           <folding />
         </state>
       </provider>
