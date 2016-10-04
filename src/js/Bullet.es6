@@ -9,7 +9,6 @@ class Bullet
         this.m_Height = 20;
         this.m_Bullets = [];
         this.m_FillStyle = "rgb(200,200,28)";
-
         this.m_CanApplyForce = true;
     }
 
