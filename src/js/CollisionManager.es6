@@ -30,6 +30,7 @@ class CollisionManager
                 a_Enemies.splice(i, 1);
                 //player loses 1 life
                 //start healthFeedback()
+                //wub
             }
         }
     }
