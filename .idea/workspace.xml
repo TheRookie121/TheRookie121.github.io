@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31036f7e-8aae-4051-bda1-5ca3abd1a6c9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/script.js" afterPath="$PROJECT_DIR$/dist/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/script.js.map" afterPath="$PROJECT_DIR$/dist/script.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/Bullet.es6" afterPath="$PROJECT_DIR$/src/js/Bullet.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/Controller.es6" afterPath="$PROJECT_DIR$/src/js/Controller.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/Enemy.es6" afterPath="$PROJECT_DIR$/src/js/Enemy.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/EnemyManager.es6" afterPath="$PROJECT_DIR$/src/js/EnemyManager.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/Player.es6" afterPath="$PROJECT_DIR$/src/js/Player.es6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/script.es6" afterPath="$PROJECT_DIR$/src/js/script.es6" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/view/index.html" afterPath="$PROJECT_DIR$/src/view/index.html" />
     </list>
     <ignored path="Creative Programming.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,13 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.es6" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.es6" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Controller.es6">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+              <folding>
+                <element signature="n#style#0;n#canvas#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -58,16 +63,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyView.es6" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/KeyView.es6">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -158,7 +153,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$USER_HOME$/.ssh/id_rsa" />
         <option value="$PROJECT_DIR$/../Creative Programming/src/js/script.es6" />
-        <option value="$PROJECT_DIR$/src/view/index.html" />
         <option value="$PROJECT_DIR$/src/js/CanvasView.es6" />
         <option value="$PROJECT_DIR$/src/js/Enemy.es6" />
         <option value="$PROJECT_DIR$/src/js/script.es6" />
@@ -166,6 +160,7 @@
         <option value="$PROJECT_DIR$/src/js/Bullet.es6" />
         <option value="$PROJECT_DIR$/src/js/EnemyManager.es6" />
         <option value="$PROJECT_DIR$/src/js/Controller.es6" />
+        <option value="$PROJECT_DIR$/src/view/index.html" />
       </list>
     </option>
   </component>
@@ -391,12 +386,12 @@
       <workItem from="1473243891200" duration="499000" />
       <workItem from="1473595705465" duration="2216000" />
       <workItem from="1473678175955" duration="104000" />
-      <workItem from="1475576582189" duration="2977000" />
+      <workItem from="1475576582189" duration="3323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9882000" />
+    <option name="totallyTimeSpent" value="10228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -637,14 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/KeyView.es6">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -723,6 +710,16 @@
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="91" selection-start-line="7" selection-start-column="91" selection-end-line="7" selection-end-column="91" />
+          <folding>
+            <element signature="n#style#0;n#canvas#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
