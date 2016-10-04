@@ -13,19 +13,23 @@ class KeyView
             this.onKeyUp(e, a_Controller);
         }
         this.m_KeyListener;
+        this.m_Keys = {};
     }
 
     //key down function
     onKeyDown(e, a)
     {
-        const keys = {
-            left: e.keyCode === 37 || e.keyCode === 65,     //true or false
-            right: e.keyCode === 39 || e.keyCode === 68,    //true or false
-            up: e.keyCode === 38 || e.keyCode === 87,       //true or false
-            down: e.keyCode === 40 || e.keyCode === 83,     //true or false
-            space: e.keyCode === 32                         //true or false
-        };
-        this.m_KeyListener(keys, a);
+        if(e.keyCode === 37 || e.keyCode === 65)
+            this.m_Keys["left"] = true;
+        if(e.keyCode === 39 || e.keyCode === 68)
+            this.m_Keys["right"] = true;
+        if(e.keyCode === 38 || e.keyCode === 87)
+            this.m_Keys["up"] = true;
+        if(e.keyCode === 40 || e.keyCode === 83)
+            this.m_Keys["down"] = true;
+        if(e.keyCode === 32)
+            this.m_Keys["space"] = true;
+        this.m_KeyListener(this.m_Keys, a);
     }
 
     //key down function
@@ -33,16 +37,16 @@ class KeyView
     {
         let keys = {};
         if(e.keyCode === 37 || e.keyCode === 65)
-            keys["left"] = false;
+            this.m_Keys["left"] = false;
         if(e.keyCode === 39 || e.keyCode === 68)
-            keys["right"] = false;
+            this.m_Keys["right"] = false;
         if(e.keyCode === 38 || e.keyCode === 87)
-            keys["up"] = false;
+            this.m_Keys["up"] = false;
         if(e.keyCode === 40 || e.keyCode === 83)
-            keys["down"] = false;
+            this.m_Keys["down"] = false;
         if(e.keyCode === 32)
-            keys["space"] = false;
-        this.m_KeyListener(keys, a);
+            this.m_Keys["space"] = false;
+        this.m_KeyListener(this.m_Keys, a);
     }
 }
 
