@@ -5,6 +5,7 @@ class EnemyBullet extends Bullet
     constructor(a_Posistion, a_Dimension)
     {
         super(a_Posistion, a_Dimension);
+        this.m_Name = "EnemyBullet";
     }
 
     update()

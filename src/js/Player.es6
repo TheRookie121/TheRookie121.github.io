@@ -12,15 +12,15 @@ class Player
             width: this.m_Dimension.width,
             height: this.m_Dimension.height
         };
-        //this.m_Width = 20;
-        //this.m_Height = 20;
-        this.m_MoveForce = 0.003;
         this.m_Speed = 5;
-        this.m_State = "Idle";
+        this.m_State = "Active";
         this.m_Bullets = [];
-        this.m_FillStyle = "rgb(200,200,28)";
-        this.m_CanApplyForce = true;
-        //this.m_RotateForce = 0.1;
+        this.m_FillStyle = "rgb(12,66,145)";
+        this.m_CanApplyForce = true
+        this.m_StateTimer = 0;
+        this.m_Health = 3;
+        this.m_Score = 0;
+        this.m_EnemiesKilled = 0;
     }
 
     length(a_Vector)
@@ -29,8 +29,15 @@ class Player
         return length;
     }
 
+    enemyKilled()
+    {
+        this.m_EnemiesKilled++;
+        this.m_Score = this.m_EnemiesKilled * 1000;
+    }
+
     update()
     {
+
         this.m_Rect = {
             x: this.m_Position.x,
             y: this.m_Position.y,
@@ -43,9 +50,41 @@ class Player
             const bullet = this.m_Bullets[i];
             bullet.update();
         }
+
+        switch(this.m_State)
+        {
+            case "Idle":
+                this.idle();
+                break;
+            case "Active":
+                this.active();
+                break;
+            case "Dead":
+                break;
+        }
     }
 
-    move(a_Keys)
+    active()
+    {}
+
+    idle()
+    {
+        this.m_StateTimer++;
+        if(this.m_StateTimer >= 300)
+        {
+            this.m_State = "Active";
+            this.m_StateTimer = 0;
+        }
+    }
+
+    hit()
+    {
+        this.m_Health--;
+        this.m_State = "Idle";
+        if(this.m_Health == 0)
+            this.m_State = "Dead";
+    }
+    move(a_Keys, a_BulletManager)
     {
         if(a_Keys.right && this.m_CanApplyForce)
         {
@@ -65,13 +104,13 @@ class Player
         }
         if(a_Keys.space)
         {
-            this.shootBullet();
+            this.shootBullet(a_BulletManager);
         }
     }
 
-    shootBullet()
+    shootBullet(a_BulletManager)
     {
-        this.m_Bullets.push(new PlayerBullet(this.m_Position, this.m_Dimension));
+        a_BulletManager.m_Bullets.push(new PlayerBullet(this.m_Position, this.m_Dimension));
     }
 
 }

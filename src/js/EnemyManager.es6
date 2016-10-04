@@ -2,14 +2,14 @@ import {Enemy} from './Enemy.es6';
 
 class EnemyManager
 {
-    constructor(a_MatterEngine)
+    constructor()
     {
         this.m_EnemySpawnTimer = 0;
         this.m_EnemySpawnTimerMax = 100;
         this.m_Enemies = [];
     }
 
-    update(a_Player)
+    update(a_BulletManager)
     {
         this.m_EnemySpawnTimer++;
 
@@ -23,7 +23,7 @@ class EnemyManager
         for(let i in this.m_Enemies)
         {
             const enemy = this.m_Enemies[i];
-            enemy.update(a_Player);
+            enemy.update(a_BulletManager);
         }
     }
 

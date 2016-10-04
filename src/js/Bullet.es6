@@ -19,16 +19,12 @@ class Bullet
 
     setRect()
     {
-        if(this.m_Name && this.m_Name == "PlayerBullet")
-            console.log("setRect", this.m_Position);
        this.m_Rect =  {
             x: this.m_Position.x,
             y: this.m_Position.y,
             width: this.m_Dimension.width,
             height: this.m_Dimension.height
         };
-        if(this.m_Name && this.m_Name == "PlayerBullet")
-            console.log("setRect", this.m_Rect);
     }
 
 

@@ -11,15 +11,13 @@ class Enemy {
             width: this.m_Dimension.width,
             height: this.m_Dimension.height
         }
-        this.m_Width = 20;
-        this.m_Height = 40;
+        this.m_FillStyle = "rgb(200,200,28)";
         this.m_Bullets = [];
-        this.m_ApplyForceTimer = 0;
-        this.m_Spawn = true;
         this.m_ShootTimer = 0;
         this.m_TriggerTimer = 0;
         this.m_BulletCounter = 0;
         this.m_CanShoot = true;
+        
     }
 
     add(PosA, PosB) {
@@ -76,7 +74,7 @@ class Enemy {
         };
     }
 
-    shootBullet()
+    shootBullet(a_BulletManager)
     {
         this.m_ShootTimer++;
         if(this.m_BulletCounter >= 20)
@@ -94,17 +92,17 @@ class Enemy {
             this.m_TriggerTimer++;
             if (this.m_TriggerTimer >= 10) {
                 const bullet = new EnemyBullet({x: this.m_Position.x, y: this.m_Position.y + 10 }, this.m_Dimension);
-                this.m_Bullets.push(bullet);
+                a_BulletManager.m_Bullets.push(bullet);
                 this.m_TriggerTimer = 0;
                 this.m_BulletCounter++;
             }
         }
     }
 
-    update(a_Player)
+    update(a_BulletManager)
     {
         this.setRect();
-        this.shootBullet();
+        this.shootBullet(a_BulletManager);
         for(let j in this.m_Bullets)
         {
             const bullet = this.m_Bullets[j];

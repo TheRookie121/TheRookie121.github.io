@@ -21,45 +21,48 @@ class CollisionManager
                 a_RectB.y <= a_RectA.y + a_RectA.height);
     }
 
-    update(a_Player, a_Enemies)
+    update(a_Player, a_Enemies, a_BulletManager)
     {
+        const bullets = a_BulletManager.m_Bullets;
         for(let i in a_Enemies)
          {
             const enemy = a_Enemies[i];
-            if (this.AABB(a_Player.m_Rect, enemy.m_Rect))
+            if (this.AABB(a_Player.m_Rect, enemy.m_Rect) && a_Player.m_State == "Active")
             {
                 a_Enemies.splice(i, 1);
-                //player loses 1 life
-                //start healthFeedback()
-                //wub
+                a_Player.hit();
             }
         }
 
         //Enemy Bullets & Player Collision
-        for(let j in a_Enemies)
+        for(let k in bullets)
         {
-            const enemy = a_Enemies[j];
-            for(let k in enemy.m_Bullets)
+            const bullet = bullets[k];
+            if(bullet.m_Name == "EnemyBullet")
             {
-                const bullet = enemy.m_Bullets[k];
-                if(this.AABB(a_Player.m_Rect, bullet.m_Rect))
+                if(this.AABB(a_Player.m_Rect, bullet.m_Rect) && a_Player.m_State == "Active")
                 {
-                   enemy.m_Bullets.splice(k, 1);
+                   bullets.splice(k, 1);
+                   a_Player.hit();
                 }
             }
         }
 
-        //Enemy Bullets & Player Collision
+        //Enemy & Player Bullet
         for(let l in a_Enemies)
         {
             const enemy = a_Enemies[l];
-            for(let m in a_Player.m_Bullets)
+            for(let m in bullets)
             {
-                const bullet = a_Player.m_Bullets[m];
-                if(this.AABB(enemy.m_Rect, bullet.m_Rect))
+                const bullet = bullets[m];
+                if(bullet.m_Name == "PlayerBullet")
                 {
-                    a_Enemies.splice(l, 1);
-                    a_Player.m_Bullets.splice(m, 1);
+                    if(this.AABB(enemy.m_Rect, bullet.m_Rect))
+                    {
+                        a_Enemies.splice(l, 1);
+                        bullets.splice(m, 1);
+                        a_Player.enemyKilled();
+                    }
                 }
             }
         }
