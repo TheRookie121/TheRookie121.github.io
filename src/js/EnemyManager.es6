@@ -31,26 +31,9 @@ class EnemyManager
     {
         const ranPos = Math.random() * 10;
         let enemyPos = {x: 0, y: 0};
-        if(ranPos >= 0 && ranPos < 2.5)//RIGHT
-        {
-            enemyPos.x = 520;
-            enemyPos.y = (Math.random() * 500);
-        }
-        else if(ranPos >= 2.5 && ranPos < 5)//LEFT
-        {
-            enemyPos.x = -20;
-            enemyPos.y = (Math.random() * 500);
-        }
-        else if(ranPos >= 5 && ranPos < 7.5)//TOP
-        {
-            enemyPos.x = (Math.random() * 500);
-            enemyPos.y = -20;
-        }
-        else if(ranPos >= 7.5 && ranPos < 10)//DOWN
-        {
-            enemyPos.x = (Math.random() * 500);
-            enemyPos.y = 520;
-        }
+        enemyPos.x = (Math.random() * 500);
+        enemyPos.y = (Math.random() * 500);
+
         this.m_Enemies.push(new Enemy(enemyPos));
 
     }
