@@ -1,5 +1,6 @@
 class Bullet
 {
+    //bullet constructor
     constructor(a_Posistion, a_Dimension)
     {
         this.m_Position = {x: a_Posistion.x + (a_Dimension.width / 2) - 5, y: a_Posistion.y};
@@ -17,6 +18,7 @@ class Bullet
         this.m_YSpeed = Math.random() * 5;
     }
 
+    //setrect for bullet
     setRect()
     {
        this.m_Rect =  {
@@ -27,7 +29,7 @@ class Bullet
         };
     }
 
-
+    //update function
     update()
     {
         this.setRect();

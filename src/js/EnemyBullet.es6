@@ -2,12 +2,14 @@ import {Bullet} from "./Bullet.es6";
 
 class EnemyBullet extends Bullet
 {
+    //enemybullet constructor
     constructor(a_Posistion, a_Dimension)
     {
         super(a_Posistion, a_Dimension);
         this.m_Name = "EnemyBullet";
     }
 
+    //update enemybullet
     update()
     {
         super.setRect();

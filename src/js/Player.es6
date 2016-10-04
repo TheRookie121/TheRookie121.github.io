@@ -2,6 +2,7 @@ import {PlayerBullet} from "./PlayerBullet.es6";
 
 class Player
 {
+    //Player constructor
     constructor()
     {
         this.m_Position = { x: 200, y: 200};
@@ -24,21 +25,16 @@ class Player
         this.m_ShootTimer = 0;
     }
 
-    length(a_Vector)
-    {
-        const length = Math.sqrt(a_Vector.x* a_Vector.x + a_Vector.y*a_Vector.y);
-        return length;
-    }
-
+    //Player killed an enemy
     enemyKilled()
     {
         this.m_EnemiesKilled++;
         this.m_Score = this.m_EnemiesKilled * 1000;
     }
 
+    //Player update loop
     update()
     {
-
         this.m_Rect = {
             x: this.m_Position.x,
             y: this.m_Position.y,
@@ -58,16 +54,13 @@ class Player
                 this.idle();
                 break;
             case "Active":
-                this.active();
                 break;
             case "Dead":
                 break;
         }
     }
 
-    active()
-    {}
-
+    //Player can't be hit in this state
     idle()
     {
         this.m_StateTimer++;
@@ -78,6 +71,7 @@ class Player
         }
     }
 
+    //Player got hit (takes damage)
     hit()
     {
         this.m_Health--;
@@ -85,24 +79,18 @@ class Player
         if(this.m_Health == 0)
             this.m_State = "Dead";
     }
+
+    //Move player and collision with sides of canvas
     move(a_Keys, a_BulletManager)
     {
         if(a_Keys.right && this.m_CanApplyForce)
-        {
             this.m_Position.x += this.m_Speed;
-        }
         if(a_Keys.left && this.m_CanApplyForce)
-        {
             this.m_Position.x -= this.m_Speed;
-        }
         if(a_Keys.up && this.m_CanApplyForce)
-        {
             this.m_Position.y -= this.m_Speed;
-        }
         if(a_Keys.down && this.m_CanApplyForce)
-        {
             this.m_Position.y += this.m_Speed;
-        }
 
         if(this.m_Position.x < 0)
             this.m_Position.x = 640;
@@ -112,12 +100,12 @@ class Player
             this.m_Position.y = 720;
         else if( this.m_Position.y > 720)
             this.m_Position.y = 0;
+
         if(a_Keys.space)
-        {
             this.shootBullet(a_BulletManager);
-        }
     }
 
+    //Shoot a bullet
     shootBullet(a_BulletManager)
     {
         this.m_ShootTimer++;

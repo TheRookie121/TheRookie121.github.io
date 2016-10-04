@@ -1,14 +1,17 @@
 import {Enemy} from './Enemy.es6';
 
+//EnemyCircle derives from Enemy
 class EnemyCircle extends Enemy
 {
+    //EnemyCircle constructor
     constructor(a_Position)
     {
         super(a_Position);
-        this.m_FillStyle = "rgb(145,0,0)";
+        this.m_FillStyle = "rgb(145,145,0)";
         this.m_Type = "circle";
     }
 
+    //EnemyCircle Update
     update(a_BulletManager, a_Player)
     {
         super.setRect();

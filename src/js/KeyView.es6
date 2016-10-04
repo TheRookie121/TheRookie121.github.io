@@ -2,17 +2,19 @@
 
 class KeyView
 {
+    //KeyView constructor
     constructor(a_Controller)
     {
+        //keydown listener
         window.onkeydown = (e) => {
             this.onKeyDown(e, a_Controller);
         }
         this.m_KeyListener;
     }
 
+    //key down function
     onKeyDown(e, a)
     {
-
         const keys = {
             left: e.keyCode === 37 || e.keyCode === 65,     //true or false
             right: e.keyCode === 39 || e.keyCode === 68,    //true or false

@@ -1,6 +1,7 @@
 
 
 class Enemy {
+
     //Enemy constructor
     constructor(a_Position) {
         this.m_Position = a_Position;
@@ -18,18 +19,7 @@ class Enemy {
 
     }
 
-    add(PosA, PosB) {
-
-        let returnValue =
-        {
-            x: PosA.x + PosB.x,
-            y: PosA.y + PosB.y
-        };
-
-        return returnValue;
-    }
-
-
+    //subtract vectors (to get direction)
     sub(PosA, PosB) {
 
         let returnValue =
@@ -41,6 +31,7 @@ class Enemy {
         return returnValue;
     }
 
+    //normalize vector
     normalize(a_Vector)
     {
 
@@ -56,12 +47,7 @@ class Enemy {
 
     }
 
-    length(a_Vector)
-    {
-        const length = Math.sqrt(a_Vector.x* a_Vector.x + a_Vector.y*a_Vector.y);
-        return length;
-    }
-
+    //set m_Rect
     setRect()
     {
         this.m_Rect = {

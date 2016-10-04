@@ -3,6 +3,7 @@ import {EnemyRect} from './EnemyRect.es6';
 
 class EnemyManager
 {
+    //EnemyManager constructor
     constructor()
     {
         this.m_EnemySpawnTimer = {
@@ -12,6 +13,7 @@ class EnemyManager
         this.m_Enemies = [];
     }
 
+    //update and spawn enemies
     update(a_BulletManager, a_Player)
     {
         this.m_EnemySpawnTimer.rect++;
@@ -34,6 +36,7 @@ class EnemyManager
         }
     }
 
+    //spawn rect enemy
     spawnRectEnemy()
     {
         const ranPos = Math.random() * 10;
@@ -44,6 +47,7 @@ class EnemyManager
 
     }
 
+    //spawn circle enemy
     spawnCircleEnemy()
     {
         const ranPos = Math.random() * 10;

@@ -1,22 +1,26 @@
 class CanvasView
 {
+    //canvasview constructor
     constructor()
     {
         this.m_Canvas = document.getElementById("m_Canvas");
         this.m_Context = this.m_Canvas.getContext("2d");
     }
 
+    //clear canvas
     clearDraw()
     {
         this.m_Context.clearRect(0, 0, 1280, 720);
     }
 
+    //draw rectangle function
     drawRect(a_Pos, a_Dimensions, a_FillStyle, a_Score)
     {
         this.m_Context.fillStyle = a_FillStyle;
         this.m_Context.fillRect(a_Pos.x, a_Pos.y, a_Dimensions.width, a_Dimensions.height);
     }
 
+    //draw circle function
     drawArc(a_Pos, a_Dimensions, a_FillStyle, a_Score)
     {
         this.m_Context.fillStyle = a_FillStyle;
@@ -30,12 +34,14 @@ class CanvasView
         this.m_Context.stroke();
     }
 
+    //draw score function
     drawScore(a_Score)
     {
         this.m_Context.font = "20px Helvetica";
         this.m_Context.fillText(a_Score, 10, 20);
     }
 
+    //draw health function
     drawHealth(a_Health)
     {
         for(let i = 0; i < a_Health; i++)
@@ -44,6 +50,7 @@ class CanvasView
         }
     }
 
+    //draw text function
     drawText(a_Score)
     {
         this.m_Context.font = "30px Helvetica";

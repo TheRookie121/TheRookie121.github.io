@@ -3,6 +3,7 @@ import {EnemyBullet} from './EnemyBullet.es6';
 
 class EnemyRect extends Enemy
 {
+    //enemyrect constructor
     constructor(a_Position)
     {
         super(a_Position);
@@ -10,6 +11,8 @@ class EnemyRect extends Enemy
         this.m_Bullets = [];
         this.m_Type = "rect";
     }
+
+    //Enemyrect shoot function
     shootBullet(a_BulletManager)
     {
         this.m_ShootTimer++;
@@ -35,6 +38,7 @@ class EnemyRect extends Enemy
         }
     }
 
+    //enemyrect update
     update(a_BulletManager)
     {
         super.setRect();

@@ -1,18 +1,11 @@
-/*
-update player collide with enemy
-
-axis aligned bounding box
-
-2 boxen die overlappen, en dan iets laten gebeuren
- */
-
 class CollisionManager
 {
     constructor()
     {
-        //..
+
     }
 
+    //Axis Aligned Bounding Box
     AABB(a_RectA, a_RectB)
     {
         return (a_RectA.x <= a_RectB.x + a_RectB.width &&
