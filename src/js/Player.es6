@@ -23,6 +23,12 @@ class Player
         this.m_Score = 0;
         this.m_EnemiesKilled = 0;
         this.m_ShootTimer = 0;
+        this.m_Right = false;
+        this.m_Left = false;
+        this.m_Up = false;
+        this.m_Down = false;
+        this.m_Space = false;
+
     }
 
     //Player killed an enemy
@@ -33,7 +39,7 @@ class Player
     }
 
     //Player update loop
-    update()
+    update(a_BulletManager)
     {
         this.m_Rect = {
             x: this.m_Position.x,
@@ -47,6 +53,17 @@ class Player
             const bullet = this.m_Bullets[i];
             bullet.update();
         }
+
+        if(this.m_Right)
+            this.m_Position.x += this.m_Speed;
+        if(this.m_Left)
+            this.m_Position.x -= this.m_Speed;
+        if(this.m_Up)
+            this.m_Position.y -= this.m_Speed;
+        if(this.m_Down)
+            this.m_Position.y += this.m_Speed;
+        if(this.m_Space)
+            this.shootBullet(a_BulletManager);
 
         switch(this.m_State)
         {
@@ -83,14 +100,30 @@ class Player
     //Move player and collision with sides of canvas
     move(a_Keys, a_BulletManager)
     {
-        if(a_Keys.right && this.m_CanApplyForce)
-            this.m_Position.x += this.m_Speed;
-        if(a_Keys.left && this.m_CanApplyForce)
-            this.m_Position.x -= this.m_Speed;
-        if(a_Keys.up && this.m_CanApplyForce)
-            this.m_Position.y -= this.m_Speed;
-        if(a_Keys.down && this.m_CanApplyForce)
-            this.m_Position.y += this.m_Speed;
+        if(a_Keys.right)
+            this.m_Right = true;
+        else
+            this.m_Right = false;
+
+        if(a_Keys.left )
+            this.m_Left = true;
+        else
+            this.m_Left = false;
+
+        if(a_Keys.up )
+            this.m_Up = true;
+        else
+            this.m_Up = false;
+
+        if(a_Keys.down)
+            this.m_Down = true;
+        else
+            this.m_Down = false;
+
+        if(a_Keys.space)
+            this.m_Space = true;
+        else
+            this.m_Space = false;
 
         if(this.m_Position.x < 0)
             this.m_Position.x = 640;
@@ -101,8 +134,6 @@ class Player
         else if( this.m_Position.y > 720)
             this.m_Position.y = 0;
 
-        if(a_Keys.space)
-            this.shootBullet(a_BulletManager);
     }
 
     //Shoot a bullet

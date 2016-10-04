@@ -54,7 +54,7 @@ class Controller
             self = this;
 
 
-            this.m_Player.update();
+            this.m_Player.update(this.m_BulletManager);
 
             //update enemymanager loop over enemies to draw them
             this.m_EnemyManager.update(this.m_BulletManager, player);
