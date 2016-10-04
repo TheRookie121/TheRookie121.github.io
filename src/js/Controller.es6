@@ -2,6 +2,7 @@ import {KeyView} from './KeyView.es6';
 import {Player} from './Player.es6';
 import {EnemyManager} from './EnemyManager.es6';
 import {CanvasView} from './CanvasView.es6';
+import {CollisionManager} from './CollisionManager.es6';
 
 class Controller
 {
@@ -13,6 +14,7 @@ class Controller
         this.m_KeyView.m_KeyListener.bind(this);//callback
         this.m_CanvasView = new CanvasView();
         this.m_EnemyManager = new EnemyManager();
+        this.m_CollisionManager = new CollisionManager();
         this.loop();
     }
 
@@ -39,6 +41,8 @@ class Controller
                 this.m_CanvasView.draw(bullet.m_Position, bullet.m_Dimension);
             }
         }
+
+        this.m_CollisionManager.update(this.m_Player, enemies);
 
         window.requestAnimationFrame(function(){
            self.loop();

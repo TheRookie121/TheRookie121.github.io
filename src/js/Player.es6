@@ -6,8 +6,14 @@ class Player
     {
         this.m_Position = { x: 200, y: 200};
         this.m_Dimension = { width: 20, height: 20 };
-        this.m_Width = 20;
-        this.m_Height = 20;
+        this.m_Rect = {
+            x: this.m_Position.x,
+            y: this.m_Position.y,
+            width: this.m_Dimension.width,
+            height: this.m_Dimension.height
+        };
+        //this.m_Width = 20;
+        //this.m_Height = 20;
         this.m_MoveForce = 0.003;
         this.m_Speed = 5;
         this.m_State = "Idle";
@@ -25,7 +31,12 @@ class Player
 
     update()
     {
-
+        this.m_Rect = {
+            x: this.m_Position.x,
+            y: this.m_Position.y,
+            width: this.m_Dimension.width,
+            height: this.m_Dimension.height
+        };
     }
 
     move(a_Keys)
